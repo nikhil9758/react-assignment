@@ -5,10 +5,11 @@ interface InputProps {
   placeholder: string;
   value: string;
   onChangeText: (text: string) => void;
-  name: string
+  name: string,
+  securetext: boolean
 }
 
-const Input: React.FC<InputProps> = ({ placeholder, value, onChangeText,name }) => {
+const Input: React.FC<InputProps> = ({ placeholder, value, onChangeText,name,securetext }) => {
   return (
     <View>
       <Text style={styles.inputtext}>
@@ -18,6 +19,7 @@ const Input: React.FC<InputProps> = ({ placeholder, value, onChangeText,name }) 
       <TextInput
         style={styles.input}
         placeholder={placeholder}
+        secureTextEntry={securetext}
         value={value}
         onChangeText={onChangeText}
         placeholderTextColor='grey'
